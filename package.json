@@ -1,0 +1,32 @@
+{
+  "name": "odin-to-dos",
+  "version": "1.0.0",
+  "description": "Part Of The Odin Project Portfolio in JS Path, JavaScript lesson.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kemal-id/odin-to-dos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kemal-id/odin-to-dos/issues"
+  },
+  "homepage": "https://github.com/kemal-id/odin-to-dos#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.4",
+    "html-webpack-plugin": "^5.6.7",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.106.2",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.4",
+    "webpack-merge": "^6.0.1"
+  }
+}
