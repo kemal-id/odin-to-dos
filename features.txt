@@ -1,0 +1,27 @@
+1. To dos are dynamically created, either use Factory Functions or classes...
+  Let's go with factory functions.
+
+2. At the minimum, my To Do should have: title, description, dueDate, and priority...
+Optional: notes and checklist.
+I wanna do all of them. also, delete and confirmation deletion modal, Light and Dark Mode
+
+3. Should have different projects or separate lists of to dos. There should be a default project at the point of opening the app.
+
+4. The UI should be able to:
+- View All Projects
+- View All To Dos in the Project (probs just a title and due date, perhaps changing color for different priorities)
+- Expand a single to do to see / edit details.
+- delete a todo
+
+5. Should be able to save to local storage (this is the last thing to do, I think)
+
+So, Basically, All the features I wanted to have are:
+Every single to do has title, description, due Date, priority, button to change priority, button to expand, button to delete,
+button to edit, due date reminder (Like "5 days left").
+Every to dos that have been completed will get strike through and moved to finished task.
+Dark and Light Mode
+Should be able to arrange to dos list and project list...
+should be able to hide project sidebar, and project list.
+The Task should be grouped based on due date (e.g Within a Week, More than a Week, 3 days left).
+the task details aren't on modal form, but expanded form. But editing will be in the modal.
+On the project list, High Priority task should be listed on the top regardless of due date.

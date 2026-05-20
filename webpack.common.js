@@ -11,7 +11,7 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "production",
+      template: "./src/index.html",
     }),
   ],
   output: {
@@ -24,6 +24,14 @@ export default {
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.html$/i,
+        use: ["html-loader"],
+      },
+      {
+        test: /\.(jpg|png|gif|jpeg)$/i,
+        type: "asset/resource",
       },
     ],
   },
