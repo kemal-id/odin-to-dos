@@ -33,7 +33,6 @@ const cancelBtnHandler = (e) => {
   removeEventListener("click", cancelBtnHandler);
 };
 
-
 // Add Project Modal
 function createAddProjectContent() {
   const addProjContent = document.createElement("div");
@@ -47,6 +46,9 @@ function createAddProjectContent() {
           </form>
     `;
 
+  const submitBtn = addProjContent.querySelector(".add-proj-btn");
+  submitBtn.addEventListener("click", submitProjectHandler);
+
   return addProjContent;
 }
 
@@ -57,3 +59,9 @@ export const addProjectHandler = (e) => {
   modalShow(addProjModal);
 };
 
+const submitProjectHandler = (e) => {
+  e.preventDefault();
+  const addProjForm = document.querySelector(".add-proj-form")
+  const data = new FormData(addProjForm);
+  console.log(data);
+};
