@@ -15,7 +15,7 @@ const basicModal = (content) => {
 const modalShow = (modalType) => {
   const body = document.body;
   body.append(modalType);
-  
+
   const modalbg = document.querySelector(".modal");
   window.onclick = function (e) {
     if (e.target == modalbg) {
@@ -28,7 +28,12 @@ const modalShow = (modalType) => {
 const addProjContent = document.createElement("div");
 addProjContent.className = "addProjModal";
 addProjContent.innerHTML = `
-  <h2>This works</h2>
+        <form action="" class="add-proj-form">
+          <label for="projName">Project Name:</label>
+          <input type="text" name="projName" id="projName" placeholder="Summer Project" required>
+          <button class="cancel-btn">Cancel</button>
+          <button class="add-proj-btn" type="submit">Add Project</button>
+        </form>
   `;
 
 export const addProjectHandler = (e) => {
