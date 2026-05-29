@@ -1,15 +1,26 @@
 {
   "name": "odin-to-dos",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Part of The Odin Project Project in JavaScript Lesson",
   "homepage": "https://github.com/kemal-id/odin-to-dos#readme",
   "bugs": {
     "url": "https://github.com/kemal-id/odin-to-dos/issues"
+=======
+  "description": "Part Of The Odin Project Portfolio in JS Path, JavaScript lesson.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
+>>>>>>> 5ac3367acc0741d85a8ac99e852326cdd237f480
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kemal-id/odin-to-dos.git"
   },
+<<<<<<< HEAD
   "license": "ISC",
   "author": "Kasejin",
   "type": "module",
@@ -27,6 +38,24 @@
     "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
+=======
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kemal-id/odin-to-dos/issues"
+  },
+  "homepage": "https://github.com/kemal-id/odin-to-dos#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.4",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.7",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.106.2",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.4",
+>>>>>>> 5ac3367acc0741d85a8ac99e852326cdd237f480
     "webpack-merge": "^6.0.1"
   }
 }
