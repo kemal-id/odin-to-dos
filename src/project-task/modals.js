@@ -1,3 +1,9 @@
+//imports
+
+
+  //addProject imports
+import { createProject } from "./projectList.js";
+
 //Basic Modal
 const basicModal = (content) => {
   const modal = document.createElement("div");
@@ -39,15 +45,15 @@ function createAddProjectContent() {
   addProjContent.className = "addProjModal";
   addProjContent.innerHTML = `
           <form action="" class="add-proj-form">
-            <label for="projName">Project Name:</label>
-            <input type="text" name="projName" id="projName" placeholder="Summer Project" required>
+            <label for="projNameInput">Project Name:</label>
+            <input type="text" name="projName" id="projNameInput" placeholder="Summer Project" required />
             <button class="cancel-btn">Cancel</button>
             <button class="add-proj-btn" type="submit">Add Project</button>
           </form>
     `;
 
   const submitBtn = addProjContent.querySelector(".add-proj-btn");
-  submitBtn.addEventListener("click", submitProjectHandler);
+  submitBtn.addEventListener("click", submitProjNameHandler);
 
   return addProjContent;
 }
@@ -59,9 +65,25 @@ export const addProjectHandler = (e) => {
   modalShow(addProjModal);
 };
 
-const submitProjectHandler = (e) => {
+function getFormData(formNode) {
+  const formData = {};
+  const data = new FormData(formNode);
+    for (const entry of data) {
+    formData[`${entry[0]}`] = entry[1].trim();
+  }
+
+  return formData;
+}
+
+const submitProjNameHandler = (e) => {
   e.preventDefault();
+  const addProjFormInput = document.getElementById("projNameInput");
+  if(addProjFormInput && !addProjFormInput.value) {
+    console.log("field empty");
+    return;
+  }
   const addProjForm = document.querySelector(".add-proj-form")
-  const data = new FormData(addProjForm);
+  const data = getFormData(addProjForm);
   console.log(data);
+  createProject(data.projName);
 };
