@@ -2,6 +2,7 @@
 
 //addProject imports
 import { createProject } from "./projectList.js";
+import { updateProjListDisplay } from "../dom.js";
 
 //Basic Modal
 const basicModal = (content) => {
@@ -93,5 +94,7 @@ const submitProjNameHandler = (e) => {
   if(successCreated) {
     removeModal();
     removeEventListener("click", submitProjNameHandler);
+
+    updateProjListDisplay();
   }
 };
