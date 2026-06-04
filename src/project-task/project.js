@@ -28,11 +28,11 @@ const addTask = (task) => {
 
 const removeTask = (taskID) => {};
 
-Object.assign(
-  Project,
-  addTask,
-  removeTask,
-  displayProject,
-);
 
-export default Project;
+const project = (projName) => {
+  const newProject = new Project(projName);
+  const proj = Object.assign(newProject, {addTask, removeTask, displayProject});
+  return proj;
+}
+
+export default project;

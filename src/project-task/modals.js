@@ -1,7 +1,6 @@
 //imports
 
-
-  //addProject imports
+//addProject imports
 import { createProject } from "./projectList.js";
 
 //Basic Modal
@@ -22,20 +21,24 @@ const modalShow = (modalType) => {
   const body = document.body;
   body.append(modalType);
 
-  const mdl = document.querySelector(".modal");
-  window.onclick = function (e) {
-    if (e.target == mdl) {
-      body.removeChild(mdl);
-    }
-  };
-
   const cancelBtn = document.querySelector(".cancel-btn");
   cancelBtn.addEventListener("click", cancelBtnHandler);
+
+  window.onclick = function (e) {
+    if (e.target == body.querySelector(".modal")) {
+      removeModal();
+    }
+  };
+};
+
+const removeModal = () => {
+  const mdl = document.querySelector(".modal");
+  document.body.removeChild(mdl);
 };
 
 const cancelBtnHandler = (e) => {
   e.preventDefault();
-  document.body.removeChild(document.querySelector(".modal"));
+  removeModal();
   removeEventListener("click", cancelBtnHandler);
 };
 
@@ -68,7 +71,7 @@ export const addProjectHandler = (e) => {
 function getFormData(formNode) {
   const formData = {};
   const data = new FormData(formNode);
-    for (const entry of data) {
+  for (const entry of data) {
     formData[`${entry[0]}`] = entry[1].trim();
   }
 
@@ -78,12 +81,17 @@ function getFormData(formNode) {
 const submitProjNameHandler = (e) => {
   e.preventDefault();
   const addProjFormInput = document.getElementById("projNameInput");
-  if(addProjFormInput && !addProjFormInput.value) {
+  if (addProjFormInput && !addProjFormInput.value) {
     console.log("field empty");
     return;
   }
-  const addProjForm = document.querySelector(".add-proj-form")
+  const addProjForm = document.querySelector(".add-proj-form");
   const data = getFormData(addProjForm);
-  console.log(data);
-  createProject(data.projName);
+  // console.log(data);
+  const successCreated = createProject(data.projName);
+
+  if(successCreated) {
+    removeModal();
+    removeEventListener("click", submitProjNameHandler);
+  }
 };

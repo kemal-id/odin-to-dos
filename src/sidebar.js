@@ -1,5 +1,5 @@
 import { sb, addProjectBox } from "./dom.js";
-import { projListTitle, projectList } from "./project-task/projectList.js";
+import { projListTitle, projectList } from "./dom.js";
 
 
 
