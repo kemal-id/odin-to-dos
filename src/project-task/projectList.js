@@ -1,6 +1,24 @@
 import project from "./project.js";
+import { updateProjListDisplay } from "../dom.js";
 
 const projList = [];
+
+export const addDefaultProject = () => {
+  let defaultExist = false;
+  projList.forEach((project) => {
+    if (project.projId == "Default") {
+      defaultExist = true;
+    }
+  });
+
+  if (defaultExist) {
+    return;
+  }
+
+  const defProj = project("Default");
+  projList.push(defProj);
+  updateProjListDisplay();
+}
 
 export const createProject = (projName) => {
   let exist = false;
@@ -21,10 +39,10 @@ export const createProject = (projName) => {
   projList.push(proj);
   console.log(projList);
 
-  return true
+  return true;
 };
 
 export const getProjList = () => {
   const list = [...projList];
   return list;
-}
+};

@@ -2,7 +2,7 @@ class Project {
   constructor(name) {
     this._projName = name;
     this._tasks = [];
-    this._projID = name + Math.trunc(Math.random() * 1000);
+    this._projId = name;
   }
 
   get projName() {
@@ -14,7 +14,7 @@ class Project {
   }
 
   get projId() {
-    return this._projID;
+    return this._projId;
   }
 }
 
@@ -28,11 +28,14 @@ const addTask = (task) => {
 
 const removeTask = (taskID) => {};
 
-
 const project = (projName) => {
   const newProject = new Project(projName);
-  const proj = Object.assign(newProject, {addTask, removeTask, displayProject});
+  const proj = Object.assign(newProject, {
+    addTask,
+    removeTask,
+    displayProject,
+  });
   return proj;
-}
+};
 
 export default project;

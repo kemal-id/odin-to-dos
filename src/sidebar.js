@@ -1,5 +1,6 @@
 import { sb, addProjectBox } from "./dom.js";
 import { projListTitle, projectList } from "./dom.js";
+import { addDefaultProject } from "./project-task/projectList.js";
 
 
 
@@ -10,6 +11,4 @@ export default (() => {
   sb.append(addProjectBox);
 })();
 
-function addProject() {
-
-}
+addDefaultProject();
