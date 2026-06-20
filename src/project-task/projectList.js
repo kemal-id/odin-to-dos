@@ -35,9 +35,9 @@ export const createProject = (projName) => {
   }
 
   const proj = project(projName);
-  console.log(proj);
+  // console.log(proj);
   projList.push(proj);
-  console.log(projList);
+  // console.log(projList);
 
   return true;
 };

@@ -57,7 +57,8 @@ function createAddProjectContent() {
     `;
 
   const submitBtn = addProjContent.querySelector(".add-proj-btn");
-  submitBtn.addEventListener("click", submitProjNameHandler);
+  submitBtn.addEventListener("click", submitBtnProjHandler);
+  window.addEventListener("keydown", submitKeyPressHandler);
 
   return addProjContent;
 }
@@ -79,7 +80,7 @@ function getFormData(formNode) {
   return formData;
 }
 
-const submitProjNameHandler = (e) => {
+const submitBtnProjHandler = (e) => {
   e.preventDefault();
   const addProjFormInput = document.getElementById("projNameInput");
   if (addProjFormInput && !addProjFormInput.value) {
@@ -91,10 +92,18 @@ const submitProjNameHandler = (e) => {
   // console.log(data);
   const successCreated = createProject(data.projName);
 
-  if(successCreated) {
+  if (successCreated) {
     removeModal();
-    removeEventListener("click", submitProjNameHandler);
+    removeEventListener("click", submitBtnProjHandler);
+    removeEventListener("keypress", submitKeyPressHandler);
 
     updateProjListDisplay();
+  }
+};
+
+const submitKeyPressHandler = (e) => {
+  const key = e.key;
+  if (key === "Enter") {
+    submitBtnProjHandler(e);
   }
 };

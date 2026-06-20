@@ -26,7 +26,8 @@ export const updateProjListDisplay = () => {
   const listId = getListChildrenId();
 
   updatedProjList.forEach((project) => {
-    if (!listId.includes(project.id)) {
+    // console.log(listId.includes(project.projId))
+    if (!listId.includes(project.projId)) {
       addprojNodetoList(project);
     }
   });
