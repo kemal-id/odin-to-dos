@@ -16,6 +16,25 @@ class Project {
   get projId() {
     return this._projId;
   }
+
+  get data() {
+    return { name: this.projName, tasks: this._tasks, id: this.projId };
+  }
+
+  set data(newData) {
+    const keyArray = Object.keys(newData);
+    const properData = ["name", "tasks", "id"];
+    for (let key in keyArray) {
+      if (!properData.includes(key)) {
+        alert("It's not suitable object");
+        return;
+      }
+    }
+
+    this._projName = newData.name;
+    this._tasks = newData.tasks;
+    this._projId = newData.id;
+  }
 }
 
 const displayProject = () => {
